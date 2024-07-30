@@ -11,8 +11,8 @@ from time import strftime
 
 # variable section
 # special metadata variables
-__version__ = "v1.0.0-beta"
-__updated__ = "29.07.2024"
+__version__ = "v1.0.1-beta"
+__updated__ = "30.07.2024"
 __by__ = "Dusan Rosic"
 
 # classic variable
@@ -215,13 +215,13 @@ class BodyDetectionApp:
 				detection_success_circle_outline = cv2.circle(rgb_frame, (15, 15), (8), RGB_BACKGROUND_BLUE, -1, cv2.LINE_AA)
 				detection_success_circle = cv2.circle(rgb_frame, (15, 15), (6), RGB_RED, -1, cv2.LINE_AA)
 
-			# draw green circle indicator if there is body detected
+			# draw blue circle indicator if there is body detected but not auto saving frames
 			else:
 				detection_success_circle_outline = cv2.circle(bgr_frame, (15, 15), (8), BGR_BACKGROUND_BLUE, -1, cv2.LINE_AA)
-				detection_success_circle = cv2.circle(bgr_frame, (15, 15), (6), BGR_GREEN, -1, cv2.LINE_AA)
+				detection_success_circle = cv2.circle(bgr_frame, (15, 15), (6), BGR_BLUE, -1, cv2.LINE_AA)
 
 				detection_success_circle_outline = cv2.circle(rgb_frame, (15, 15), (8), RGB_BACKGROUND_BLUE, -1, cv2.LINE_AA)
-				detection_success_circle = cv2.circle(rgb_frame, (15, 15), (6), RGB_GREEN, -1, cv2.LINE_AA)
+				detection_success_circle = cv2.circle(rgb_frame, (15, 15), (6), BGR_BLUE, -1, cv2.LINE_AA)
 
 		# converting numpy to PIL (python image library) image frame
 		img = Image.fromarray(rgb_frame)
